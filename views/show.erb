@@ -4,11 +4,10 @@
 <%= @recipe_details[0]["description"] %>
 
 <h2>Instructions</h2>
-<%= @recipe_details[0]["instructions"] %>
+<%= @recipe_details[0]["instructions"].gsub(/[\n\t]/, '<p>') %>
 <h2>Ingredients</h2>
-
 <ul>
-  <%@recipe_details.each do |ingredient|%>
+ <%@recipe_details.each do |ingredient|%>
   <li><%= ingredient["ingredients"] %></li>
   <%end%>
 </ul>
