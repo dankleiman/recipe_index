@@ -1,10 +1,13 @@
 <h1><%= @recipe_details[0]["recipe"] %></h1>
 
-<h2>Description</h2>
+<% if @recipe_details[0]["description"] != nil %>
+  <h2>Description</h2>
+<%end%>
 <%= @recipe_details[0]["description"] %>
-
-<h2>Instructions</h2>
-<%= @recipe_details[0]["instructions"].gsub(/[\n\t]/, '<p>') %>
+<% if @recipe_details[0]["instructions"] != nil %>
+  <h2>Instructions</h2>
+  <%= @recipe_details[0]["instructions"].gsub(/[\n\t]/, '<p>') %>
+<%end%>
 <h2>Ingredients</h2>
 <ul>
  <%@recipe_details.each do |ingredient|%>
