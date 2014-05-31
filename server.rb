@@ -32,6 +32,5 @@ end
 get '/recipes/:id' do
   id = params[:id]
   @recipe_details = get_recipe_details(id)
-  binding.pry
   erb :show
 end
