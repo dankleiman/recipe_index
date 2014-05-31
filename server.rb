@@ -1,6 +1,5 @@
 require 'sinatra'
 require 'pg'
-require 'pry'
 
 def db_connection
   begin
